@@ -1,0 +1,174 @@
+.mytitle_uni_rate
+{
+    width:100%;
+    background-color: rgb(100,200,200);
+}
+
+
+.mytitle_uni{
+    width:80%;
+    float:left;
+    text-align: left;
+    font-size: 14px;
+}
+
+.mytitle{
+    width:100%;
+    float:left;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.my_uni{
+    width:100%;
+    float:left;
+    text-align: left;
+    padding: 5px 0px 0px 10px;
+}
+.myrate{
+    width: 20%;
+    float: left;
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+a.my_no_underline:hover
+{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.my_headers{
+    width:100%;
+}
+
+.my_login_container
+{
+    width:47%;
+    min-width:300px;
+    height: 580px;
+    margin: 0 auto;
+}
+
+.my_container_filter_table
+{
+    width:100%;
+    min-height: 700px;
+}
+
+.my_filter_courses_container
+{
+    width:20%;
+    float:left;
+}
+
+.my_table_courses_div
+{
+    width:80%;
+    float:left;
+}
+
+.my_filters_courses
+{
+    width: 100%;
+    height: 150px;
+    border-radius: 8px;
+    padding: 10px 10px 10px 20px;
+    background-color: #FCFCFC;
+    overflow-x:auto;
+    font-size: 11px;
+}
+
+.my_filters_buttons_div
+{
+    width:100%;
+    padding: 10px 0px 10px 0px;
+}
+
+.my_filters_button
+{
+    padding: 10px 0px 10px 0px;
+}
+
+.my_table_header
+{
+    font-weight:bold;
+    background-color: #565856;
+    color: #fff;
+}
+
+.my_table_header:hover
+{
+    font-weight:bold;
+    background-color: #565856;
+    color: #fff;
+}
+
+
+.my_chosen_tab
+{
+    color: #fff;
+    background-color: #245783;
+    border-color: #245783;
+    width: 200px;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    font-weight: bold;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.my_chosen_tab:hover
+{
+    text-decoration: none;
+    color: #fff;
+}
+
+.my_choices_sign_reg_restricted
+{
+    width:100%;
+    min-height:250px;
+}
+
+.my_sign_restricted
+{
+    width:50%;
+    float:left;
+    margin: 10px 0px 10px 0px;
+    padding: 10px 10px 10px 10px;
+
+}
+
+.my_inner_restricted_choises
+{
+    width: 80%;
+    background-color:#fff;
+    margin: 0 auto;
+    padding: 10px 10px 10px 10px;
+}
+
+.my_extra_space
+{
+    width:100px;
+    height: 200px;
+}
+
+.my_error
+{
+
+}

@@ -1,0 +1,35 @@
+{% extends 'rate/base.html' %}
+{% load static %}
+{% block title %}My Profile{% endblock %}
+{% block path %}
+    <li><a href="/rate/">Home</a></li>
+    <li class="active">My profile</li>{% endblock %}
+{% block body_block %}
+    <h1 class="text-center" style="height:100px;"><strong>My profile</strong><br/></h1>
+
+    <div class="jumbotron clearfix">
+        <h4><strong>First Name:</strong> {{ user.first_name }}</h4>
+        <h4><strong>Last Name:</strong> {{ user.last_name }}</h4>
+        <h4><strong>Email:</strong> {{ user.email }}</h4>
+    </div>
+    <div class="jumbotron">
+        <h3>My rates</h3>
+        {% if list %}
+            {% for rate in list %}
+                <div class="text-justify" style="background-color: snow; margin: 10px">
+                    <p>
+                        <a href="/rate/course/{{ rate.url }}">{{ rate.course.title }}</a>,
+                        {{ rate.course.university }}, {{ rate.course.year }}
+                    </p>
+                    <p>{{ rate.comment }} - (rating: {{ rate.rate }})</p>
+
+                    <div class="text-right">{{ rate.date }}</div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="text-justify"><p>No ratings yet.</p></div>
+        {% endif %}
+    </div>
+        <div class="my_extra_space"></div>
+{% endblock %}
+

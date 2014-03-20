@@ -1,0 +1,39 @@
+{% extends 'rate/base.html' %}
+{% block title %}{{ course_title }}{% endblock %}
+{% block path %}
+    <li><a href="/rate/">Home</a></li>
+    <li class="active">Course</li>
+    <li class="active">{{ course_title }}</li>{% endblock %}
+{% block body_block %}
+        <br>
+    <div class="jumbotron clearfix">
+
+        <div class="pull-left">
+            <h3><strong>{{ course_title }}</strong></h3>
+            <h4>{{ course.university.name }}</h4>
+            <h4>Year: {{ course.year }}</h4>
+            <h4>Professor: {{ course.professor }}</h4>
+            <h4>Level: {% if course.level == 5 %} MSc {% else %}{{ course.level }}{% endif %}</h4>
+        </div>
+        <div class="pull-right" style="text-align: center">
+            <h2>{{ course.stored_average_rating }}</h2></br>
+            {% if rateIt != "no" %}
+                <a class="btn btn-primary" style="height:80px;" href="/rate/course/{{ course.url }}/rateIt"><br>RATE</a>
+            {% endif %}
+        </div>
+    </div>
+        <br><br>
+    <div class="jumbotron">
+        <h4>Comments</h4>
+        {% if rate %}
+            {% for i in rate %}
+                {% if i.comment != '' %}
+                <div class="text-primary" style="background-color: snow; margin: 10px; padding: 5px 7px 5px 7px;"><p>{{ i.comment }}</p><div class="text-right">{{ i.date }}</div></div>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <div class="text-primary"><p>No comments for this course yet.</p></div>
+        {% endif %}
+    </div>
+        <div class="my_extra_space" style="height:100px;"></div>
+{% endblock %}

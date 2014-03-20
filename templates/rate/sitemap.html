@@ -1,0 +1,51 @@
+{% extends 'rate/base.html' %}
+{% load static %}
+
+{% block title %}Sitemap{% endblock %}
+{% block path %}
+    <li><a href="/rate/">Home</a></li>
+    <li class="active">Sitemap</li>{% endblock %}
+{% block body_block %}
+    <h1 style="text-align: center; height:100px;"><strong>Sitemap</strong><br/></h1>
+    <div style="height:400px;">
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <ul>
+                    <li><a href="/rate/" target="_blank">Home</a>
+                        <ul>
+                            <li><a href="/rate/about/" target="_blank">About</a></li>
+                            <li><a href="/rate/contact/" target="_blank">Contact Us</a></li>
+                            <li><a href="/rate/login/" target="_blank">Login</a></li>
+                            <li><a href="/rate/register/" target="_blank">Register</a></li>
+                            <li>Rated Courses
+                                <ul>
+                                    <li><a href="/rate/rated_courses/top/" target="_blank">Top Rated Courses</a></li>
+                                    <li><a href="/rate/rated_courses/worst/" target="_blank">Worst Rated Courses</a>
+                                    </li>
+                                    <li><a href="/rate/rated_courses/latest/" target="_blank">Most Recent Rated
+                                        Courses</a></li>
+                                </ul>
+                            </li>
+                            <li>Course
+                                <ul>
+                                    {% if list %}
+                                        {% for course in list %}
+                                            <li>
+                                                <a href="/rate/course/{{ course.url }}">{{ course.title }}</a>, {{ course.university }}, {{ course.year }}
+                                                <ul>
+                                                    <li><a href="/rate/course/{{ course.url }}/rateIt">Rate</a></li>
+                                                </ul>
+                                            </li>
+                                        {% endfor %}
+                                    {% endif %}
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="my_extra_space"></div>
+{% endblock %}
+

@@ -1,0 +1,38 @@
+{% extends 'rate/base.html' %}
+
+{% block title %}No access{% endblock %}
+{% block path %}
+<li><a href="/rate/">Home</a></li>
+<li class="active">Restricted Page</li>{% endblock %}
+{% block body_block %}
+<h1>Access denied</h1>
+<h2>You are not authorized to access this page.</h2>
+<h3>Please select one of the following options</h3>
+<div class="my_choices_sign_reg_restricted">
+    <div class="col-md-4" style="width:50%;  padding: 10px 0px 10px 20px; margin:10px 0px 10px 0px; ">
+        <div class="my_inner_restricted_choises">
+            <p><h3>Sign in</h3></p>
+            If you are already registered login</br><br><br>
+            <a href="/rate/login/"><input class="btn btn-primary" style="width:150px;" type="submit" value="Sign in"/></a>
+        </div>
+    </div>
+    <div class="col-md-4" style="width:50%; padding: 10px 0px 10px 20px;  margin:10px 0px 10px 0px; ">
+
+        <div class="my_inner_restricted_choises">
+            <p><h3>New to Rate this Course?</h3></p>
+            <p><h5>Get started now. It's fast and easy.</h5></p>
+            <ul>
+                <li>The ratings are close to reality, because only students that provide a verified university
+                    e-mail address are allowed to register and eventually rate a course.
+                </li>
+                <li>The ratings are posted anonymously and the users do not feel that they are in threatened if they
+                    provide negative feedback.
+                </li>
+            </ul><br>
+                <a href="/rate/register/"><input class="btn btn-primary" style="width:150px;" type="submit" name="button" value="Register"></a>
+        </div>
+    </div>
+</div>
+        <div class="my_extra_space"></div>
+
+{% endblock %}

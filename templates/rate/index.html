@@ -1,0 +1,157 @@
+{% extends 'rate/base.html' %}
+{% block body_block %}
+        <br><br>
+    <div class="jumbotron">
+        <form class="navbar-form" method="post">
+            {% csrf_token %}
+            <div class="btn-group">
+                <input type="hidden" id="uni_hidden" name="uni_hidden" value="-1"/>
+                <select id="id_select" class="selectpicker bla bla bli"data-live-search="true" name="university_options">
+                    <option selected value="" >Choose University</option>
+                    {% if universitylist %}
+                        {% for item in universitylist %}
+                            <option value="{{ item.id }}">{{ item.name }}</option>
+                        {% endfor %}
+                    {% endif %}
+                </select>
+            </div>
+            <div class="btn-group">
+                <select id="id_select" class="selectpicker bla bla bli"data-live-search="true" name="course_options">
+                    <option selected value="" >Choose Course</option>
+                    {% if courselist %}
+                        {% for item in courselist %}
+                            <option value="{{ item.title }}">{{ item.title }}</option>
+                        {% endfor %}
+                    {% endif %}
+                </select>
+            </div>
+
+            <div class="btn-group">
+                <select id="id_select" class="selectpicker bla bla bli"data-live-search="true" name="level_options">
+                    <option selected value="" >Choose Level</option>
+                    <option value="1">Level 1</option>
+                    <option value="2">Level 2</option>
+                    <option value="3">Level 3</option>
+                    <option value="4">Level 4</option>
+                    <option value="5">Level M</option>
+                </select>
+            </div>
+            <div class="btn-group">
+                <select id="id_select" class="selectpicker bla bla bli" data-live-search="true" name="year_options">
+                    <option selected value="" >Choose Year</option>
+                    {% if yearlist %}
+                        {% for item in yearlist %}
+                            <option value="{{ item.year }}">{{ item.year }}</option>
+                        {% endfor %}
+                    {% endif %}
+                </select>
+            </div>
+            <input class="btn btn-primary" style="float: right; width: 170px;" type="submit" name="btnFind" value="Find"/>
+        </form>
+    </div>
+    <div class="container-fluid">
+        <div class="col-sm-4" style="text-align: center">
+            <div class="my_headers">
+                <h3>
+                   <a class="my_no_underline" href="/rate/rated_courses/top">Top 5</a>
+                </h3>
+            </div>
+            {% if topfive %}
+                <ul class="list-group">
+                    {% for rate in topfive %}
+
+                        <a href="/rate/course/{{ rate.url }}">
+                            <div class="mytitle_uni_rate">
+                                <li class="list-group-item">
+                                    <div class="mytitle_uni">
+                                        <div class="mytitle">
+                                            {{ rate.title }}
+                                        </div>
+                                        <div class="my_uni">
+                                            {{ rate.university }}
+                                        </div>
+                                    </div>
+                                    <div class="myrate">
+                                        {{ rate.stored_average_rating }}
+                                    </div>
+
+                                </li>
+                            </div>
+                        </a>
+
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <strong>There are no top 5 yet.</strong>
+            {% endif %}
+        </div>
+        <div class="col-sm-4" style="text-align: center">
+            <div class="my_headers">
+                <h3>
+                   <a class="my_no_underline" href="/rate/rated_courses/worst">Worst 5</a>
+                </h3>
+            </div>
+            {% if worstfive %}
+                <ul class="list-group">
+                    {% for rate in worstfive %}
+
+                        <a href="/rate/course/{{ rate.url }}">
+                            <div class="mytitle_uni_rate">
+                                <li class="list-group-item">
+                                    <div class="mytitle_uni">
+                                        <div class="mytitle">
+                                            {{ rate.title }}
+                                        </div>
+                                        <div class="my_uni">
+                                            {{ rate.university }}
+                                        </div>
+                                    </div>
+                                    <div class="myrate">
+                                        {{ rate.stored_average_rating }}
+                                    </div>
+                                </li>
+                            </div>
+                        </a>
+
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <strong>There are no worst 5 yet.</strong>
+            {% endif %}
+        </div>
+        <div class="col-sm-4" style="text-align: center">
+            <div class="my_headers">
+                <h3>
+                   <a class="my_no_underline" href="/rate/rated_courses/latest">Most Recent</a>
+                </h3>
+            </div>
+            <ul class="list-group">
+                {% if latestfive %}
+                    {% for rate in latestfive %}
+
+                        <a href="/rate/course/{{ rate.url }}">
+                            <div class="mytitle_uni_rate">
+                                <li class="list-group-item">
+                                    <div class="mytitle_uni">
+                                        <div class="mytitle">
+                                            {{ rate.title }}
+                                        </div>
+                                        <div class="my_uni">
+                                            {{ rate.university }}
+                                        </div>
+                                    </div>
+                                    <div class="myrate">
+                                        {{ rate.stored_average_rating }}
+                                    </div>
+                                </li>
+                            </div>
+                        </a>
+
+                    {% endfor %}
+                {% else %}
+                    <strong>There are no latest yet.</strong>
+                {% endif %}
+            </ul>
+        </div>
+    </div><div class="my_extra_space"></div>
+{% endblock %}

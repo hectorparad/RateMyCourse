@@ -1,0 +1,26 @@
+{% extends 'rate/base.html' %}
+
+{% block title %}Login{% endblock %}
+{% block path %} <li><a href="/rate/">Home</a></li><li class="active">Login</li>{% endblock %}
+{% block body_block %}
+    <div class="my_login_container">
+        <div class="my_extra_space" style="height:150px;"></div>
+        <div class="col-md-4">
+            <div class="thumbnail" style="padding: 4px 18px 24px 18px;">
+                <h1>Login</h1>
+                <form id="login_form" method="post" action="/rate/login/">
+                    {% csrf_token %}
+                    <label>Email address</label>
+                    <input class="form-control" type="text" name="username" value="" size="50"/>
+                    <br/>
+                    <label>Password</label>
+                    <input class="form-control" type="password" name="password" value="" size="50"/>
+                    <br/>
+                    <input class="btn btn-primary " type="submit" style="margin:10px 80px 10px 0px;" value="Sign in"/>
+                </form>
+                <p><a href="#"><em>Forgot your password?</em></a></p>
+            </div>
+        </div>
+    </div>
+        <div class="my_extra_space"></div>
+{% endblock %}

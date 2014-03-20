@@ -1,0 +1,67 @@
+{% extends 'rate/base.html' %}
+
+{% block title %}Register{% endblock %}
+{% block path %}
+<li xmlns="http://www.w3.org/1999/html"><a href="/rate/">Home</a></li>
+    <li class="active">Register</li>{% endblock %}
+{% block body_block %}
+    {% if registered %}
+        <h4>You have already an account.</h4>
+        <a href="/rate/">Return to the homepage.</a><br/>
+    {% else %}
+        <br><br>
+        <div class="my_login_container">
+            <div class="col-md-4">
+                <div class="thumbnail" style="padding: 4px 18px 24px 18px;">
+                    <h1>New to Rate my Course?</h1>
+
+                    <h2>Register here!</h2>
+
+                    <form class="form-horizontal" id="user_form" method="post" action="/rate/register/"
+                          enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <p>
+                            <label class="control-label" for="first_name">First Name</label>
+                            <div style="color:#FF0000;">
+                            <input class="form-control" id="first_name" name="first_name" required=""/>
+                            </div>
+                        </p>
+
+                        <p>
+                            <label class="control-label" for="last_name">Last Name</label>
+                            <div style="color:#FF0000;">
+                            <input class="form-control" id="last_name" name="last_name" required=""/>
+                            </div>
+                        </p>
+
+                        <p>
+                            <label class="control-label" for="email">Email address</label>
+                            <div style="color:#FF0000;">
+                            <input class="form-control" type="email" id="email" name="email" required=""/>
+                        </div>
+                        </p>
+
+                        <p>
+                            <label class="control-label" for="password">Password</label>
+                            <div style="color:#FF0000;">
+                            <input class="form-control" type="password" id="password" name="password" required="">
+                        </div>
+                        </p>
+
+                        <label class="control-label" for="confirmpass">Confirm Password</label>
+                        <div style="color:#FF0000;">
+                        <input onkeydown="check(this);" onkeyup="check(this);" class="form-control" type="password" id="confirmpass" name="confirmpass"
+                               onchange="checkPassword"/></br>
+                        <strong><p class="" id="divCheck"></p></strong></div>
+                        <br>
+                        <input class="btn btn-primary" type="submit" name="submit" style="margin:10px 80px 10px 0px;" value="Register"/>
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div><!-- -->
+        <div class="my_extra_space" style="height:150px;"></div>
+    {% endif %}
+{% endblock %}

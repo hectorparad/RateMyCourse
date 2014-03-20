@@ -1,0 +1,56 @@
+{% extends 'rate/base.html' %}
+{% load static %}
+
+{% block title %}About{% endblock %}
+{% block path %}
+    <li><a href="/rate/">Home</a></li>
+    <li class="active">About</li>{% endblock %}
+{% block body_block %}
+    <h1 style="text-align: center"><strong>About Us</strong><br/></h1>
+    <div class="container">
+        <div class="col-xs-6 col-md-3">
+            <img src="{% static "images/colossus.jpg" %}" width="200" height="200">
+        </div>
+        <div style="margin-bottom: 100px">
+            <ul class="list-unstyled" style="color:#000;">
+                <li><strong><h3>Colossus 4.0</h3></strong></li>
+                <li>Team Colossus was formed in October 2013. The initiators were Marios, Paris, Hector and Connie.</li>
+                <li>The name of the team came from an unsually large burger the players were consuming each Friday.</li>
+                <li>Pantelis was added in the team much later, due to coursework, as he was cheap labor.</li>
+                <li>The greatest achievement of Colossus is to build the Rate My Course web page.</li>
+                <li>People all around the world visit this marvelous page to rate and see rated courses.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid" style="text-align: center">
+        <ul class="list-unstyled list-inline" >
+            <li>
+                <img src="{% static "groupMembers/Marios.jpg" %}" width="200" height="200">
+            </li>
+            <li>
+                <img src="{% static "groupMembers/Paris.jpg" %}" width="200" height="200">
+            </li>
+            <li>
+                <img src="{% static "groupMembers/Ektor.jpg" %}" width="200" height="200">
+            </li>
+            <li>
+                <img src="{% static "groupMembers/Conn.jpg" %}" width="200" height="200">
+            </li>
+            <li>
+                <img src="{% static "groupMembers/Pantelis.jpg" %}" width="200" height="200">
+            </li>
+        </ul>
+    </div>
+        <div class="my_extra_space"></div>
+{% endblock %}
+<h2>Team Members:</h2>
+<h3> Paraskevas Sarris</h3>
+<img src="{% static "groupMembers/Paris.jpg" %}" alt="Picture of Paris" width="200" height="200"/>
+<h3>Pantelis Georgiades</h3>
+<img src="{% static "groupMembers/Pantelis.jpg" %}" alt="Picture of Pantelis" width="200" height="200"/>
+<h3>Marios Fantaoutsakis</h3>
+<img src="{% static "groupMembers/Marios.jpg" %}" alt="Picture of Marios" width="200" height="200"/>
+<h3> Ektor Pavlos Paradeisis </h3>
+<img src="{% static "groupMembers/Ektor.jpg" %}" alt="Picture of Ektor" width="200" height="200"/>
+<h3>Constantinos Charalambous</h3>
+<img src="{% static "groupMembers/Conn.jpg" %}" alt="Picture of Connie" width="200" height="200"/>
